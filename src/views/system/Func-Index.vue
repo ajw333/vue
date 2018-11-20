@@ -182,7 +182,7 @@ export default {
         openDialog(title, id) {
             this.dialogTitle = title;
             this.dialogShow = true;
-            if (id > 0) {
+          if (id > 0) {
                 this.$ajax
                     .get(this.moduleName + "/findOne?id=" + id)
                     .then(res => {

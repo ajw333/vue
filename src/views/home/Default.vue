@@ -21,7 +21,7 @@
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item>
                         <!--    <span @click="gopath('/userOneInfo')">个人信息</span>  openDialog(title, name)-->
-                          <span @click="openDialog('个人中心' )">个人信息</span>
+                          <span @click="openDialog('个人信息','超级用户')">个人信息</span>
                         </el-dropdown-item>
                         <el-dropdown-item>
                             <span @click="gopath('/user-updatepwd')">修改密码</span>
@@ -66,7 +66,9 @@
     </el-container>
 </template>
 <script>
+  import userdialog from "@/views/home/dialog/User-Dialog";
 export default {
+  components: { "user-dialog": userdialog },
     data: function() {
         return {
             fullHeight: document.documentElement.clientHeight,
@@ -79,7 +81,22 @@ export default {
             userInfoDto: null,
             roleInfoDto: null,
             deptInfoDto: null,
-            listfuncInfoDto: []
+            listfuncInfoDto: [],
+          dialogData: { id: 0, is_Enable: 1, is_Delete: 0 },
+          queryData: {
+            code: "",
+            name: "",
+            is_Enable: ""
+          },
+          moduleName: "userInfo",
+          pIndex: 1,
+          pSize: 10,
+          totalNum: 0,
+          loadingdata: false,
+          tableData: [],
+          dialogShow: false,
+          dialogTitle: "",
+          delVisible: false
         };
     },
     created: function() {
@@ -117,10 +134,10 @@ export default {
         gopath(path) {
             this.$router.push({ path: path });
         },
-        openDialog(title) {
+        openDialog(title,name) {
             this.dialogTitle = title;
             this.dialogShow = true;
-           /*  if (name > 0) {
+             if (name > 0) {
                   this.$ajax
                   .get(this.moduleName + "/findOne?name=" + name)
                   .then(res => {
@@ -128,7 +145,7 @@ export default {
                  });
                  } else {
                   //  this.dialogData = { id: 0, is_Enable: 1, is_Delete: 0 };
-             }*/
+             }
         },
         logout() {
             this.gopath("/login");
