@@ -20,7 +20,8 @@
                     </table>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item>
-                            <span @click="gopath('/userOneInfo')">个人信息</span>
+                        <!--    <span @click="gopath('/userOneInfo')">个人信息</span>  openDialog(title, name)-->
+                          <span @click="openDialog('个人中心' )">个人信息</span>
                         </el-dropdown-item>
                         <el-dropdown-item>
                             <span @click="gopath('/user-updatepwd')">修改密码</span>
@@ -115,6 +116,19 @@ export default {
         },
         gopath(path) {
             this.$router.push({ path: path });
+        },
+        openDialog(title) {
+            this.dialogTitle = title;
+            this.dialogShow = true;
+           /*  if (name > 0) {
+                  this.$ajax
+                  .get(this.moduleName + "/findOne?name=" + name)
+                  .then(res => {
+                  this.dialogData = res.data;
+                 });
+                 } else {
+                  //  this.dialogData = { id: 0, is_Enable: 1, is_Delete: 0 };
+             }*/
         },
         logout() {
             this.gopath("/login");
