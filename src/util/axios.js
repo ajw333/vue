@@ -20,7 +20,7 @@ const downloadUrl = url => {
 // request拦截器
 service.interceptors.request.use(config => {
   config.headers['Content-Type'] = 'application/json; charset=utf-8';
-  let userallInfo = JSON.parse(sessionStorage.getItem("zsylocalInfo"));
+  let userallInfo = JSON.parse(sessionStorage.getItem("zhanglocalInfo"));
   if (userallInfo) {
     var token = userallInfo.data.userInfoDto.token;
     config.headers.Authorization = `Bearer ${token}`;

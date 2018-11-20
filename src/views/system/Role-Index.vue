@@ -2,19 +2,19 @@
   <el-row>
     <el-row>
       <el-col :span="20">
-        <el-row style="margin-bottom:6px; padding:0 100px;">
-        <!--  <el-input v-model="queryData.routePath" placeholder="路由" :maxlength="20" size="mini" class="inputwinth150">
-            <template slot="prepend">路由</template>
-          </el-input>
-          <el-input v-model="queryData.code" placeholder="编码" :maxlength="20" size="mini" class="inputwinth150">
-            <template slot="prepend">编码</template>
-          </el-input>
-          <el-input v-model="queryData.name" placeholder="模糊名称" :maxlength="20" size="mini" class="inputwinth150">
-            <template slot="prepend">名称</template>
-          </el-input>
-          <el-radio v-model="queryData.is_Enable" :label="1">启用</el-radio>
-          <el-radio v-model="queryData.is_Enable" :label="0">弃用</el-radio>
-        </el-row>-->
+        <!--    <el-row style="margin-bottom:6px; padding:0 100px;">
+        --  <el-input v-model="queryData.routePath" placeholder="路由" :maxlength="20" size="mini" class="inputwinth150">
+               <template slot="prepend">路由</template>
+             </el-input>
+             <el-input v-model="queryData.code" placeholder="编码" :maxlength="20" size="mini" class="inputwinth150">
+               <template slot="prepend">编码</template>
+             </el-input>
+             <el-input v-model="queryData.name" placeholder="模糊名称" :maxlength="20" size="mini" class="inputwinth150">
+               <template slot="prepend">名称</template>
+             </el-input>
+             <el-radio v-model="queryData.is_Enable" :label="1">启用</el-radio>
+             <el-radio v-model="queryData.is_Enable" :label="0">弃用</el-radio>
+           </el-row>-->
         <el-row>
           <el-button size="mini" icon="el-icon-plus" @click="openDialog('新增',0)">新增</el-button>
           <el-button size="mini" icon="fa fa-sign-in"> 导入</el-button>
@@ -61,30 +61,30 @@
                </el-form>
            </template>
       </el-table-column>-->
-      <el-table-column type="index" label="序号" width="50">
+      <el-table-column type="index" label="序号" width="80">
       </el-table-column>
-      <el-table-column prop="routePath" label="路由">
+      <el-table-column prop="code" label="编码" width="80">
       </el-table-column>
-      <el-table-column prop="styleName" label="类名" width="180">
+      <el-table-column prop="ownerId" label="拥有人ID" width="180">
       </el-table-column>
-      <el-table-column prop="levelVal" label="类型" width="70">
+      <el-table-column prop="version" label="版本" width="170">
       </el-table-column>
       <el-table-column prop="code" label="编码" width="150">
       </el-table-column>
-      <el-table-column prop="name" label="名称" width="100">
+      <el-table-column prop="name" label="名称" width="200">
       </el-table-column>
-      <el-table-column prop="remarks" label="描述" width="70">
+      <el-table-column prop="remarks" label="描述" width="170">
       </el-table-column>
-      <el-table-column prop="parentId" label="父级" sortable width="70">
+      <el-table-column prop="parentId" label="父级" sortable width="170">
       </el-table-column>
-      <el-table-column prop="sortNum" label="排序" sortable width="70">
+      <el-table-column prop="sortNum" label="排序" sortable width="170">
       </el-table-column>
-      <el-table-column label="状态" width="70">
+      <el-table-column label="状态" width="170">
         <template slot-scope="prop">
           <span v-html="prop.row.is_Enable==1?'启用':'弃用'"></span>
         </template>
       </el-table-column>
-      <el-table-column label="操作" width="100">
+      <el-table-column label="操作" width="300">
         <template slot-scope="prop">
           <el-button @click="openDialog('编辑',prop.row.id)" type="text">编辑</el-button>
           <el-button @click="delId(prop.row.id)" type="text">删除</el-button>
