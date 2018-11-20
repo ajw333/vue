@@ -22,9 +22,9 @@ Vue.prototype.$accounting = accounting;
 
 router.beforeEach((to, from, next) => {
   if (to.path == '/login') {
-    sessionStorage.removeItem('zsylocalInfo');
+    sessionStorage.removeItem('zhanglocalInfo');
   }
-  let user = sessionStorage.getItem('zsylocalInfo');
+  let user = sessionStorage.getItem('zhanglocalInfo');
   if (!user && to.path != '/login') {
     next({ path: '/login' })
   } else {

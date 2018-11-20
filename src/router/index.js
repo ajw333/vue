@@ -10,10 +10,11 @@ const childlst = [
   { path: '/role', component: _import('system/Role-Index') },               //角色管理
   { path: '/authority', component: _import('system/Authority-Index') },             //常量管理
   { path: '/func', component: _import('system/Func-Index') },               //功能管理
-  { path: '/Organize', component: _import('system/Organize-Index') },               //流程管理
+  { path: '/dept', component: _import('system/Dept-Index') },               //流程管理
   { path: '/syslog', component: _import('system/Syslog-Index') },           //日志管理
   { path: '/quartz', component: _import('system/Quartz-Job') },             //后台任务
   { path: '/student', component: _import('student/Index') },                //学生管理
+ // { path: '/userOneInfo', component: _import('home/UserOneInfo-Index') },                //学生管理
 ];
 let routerlst = [
   { path: '/', redirect: '/login' },

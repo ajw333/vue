@@ -2,7 +2,7 @@
     <el-container>
         <el-header>
             <div v-if="!isCollapse" class="headleft" :style="'width:'+(!isCollapse?(asideWidthMax-20):asideWidthMin)+'px'">
-                <span>后台管理系统</span>
+                <span>管理系统</span>
             </div>
             <div class="headleft" @click.prevent="collapse">
                 <i class="fa fa-bars" style="cursor: pointer;"></i>
@@ -20,7 +20,8 @@
                     </table>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item>
-                            <span @click="gopath('/userOneInfo')">个人信息</span>
+                        <!--    <span @click="gopath('/userOneInfo')">个人信息</span>  openDialog(title, name)-->
+                          <span @click="openDialog('个人中心' )">个人信息</span>
                         </el-dropdown-item>
                         <el-dropdown-item>
                             <span @click="gopath('/user-updatepwd')">修改密码</span>
@@ -82,7 +83,7 @@ export default {
         };
     },
     created: function() {
-        let userallInfo = JSON.parse(sessionStorage.getItem("zsylocalInfo"));
+        let userallInfo = JSON.parse(sessionStorage.getItem("zhanglocalInfo"));
         if (userallInfo) {
             this.userInfoDto = userallInfo.data.userInfoDto;
             this.roleInfoDto = userallInfo.data.roleInfoDto;
@@ -91,7 +92,7 @@ export default {
         } else {
             this.gopath("/login");
         }
-        var tabList = JSON.parse(sessionStorage.getItem("zsylocalTabs"));
+        var tabList = JSON.parse(sessionStorage.getItem("zhanglocalTabs"));
         if (tabList) {
             this.tabVals = tabList;
         } else {
@@ -116,6 +117,19 @@ export default {
         gopath(path) {
             this.$router.push({ path: path });
         },
+        openDialog(title) {
+            this.dialogTitle = title;
+            this.dialogShow = true;
+           /*  if (name > 0) {
+                  this.$ajax
+                  .get(this.moduleName + "/findOne?name=" + name)
+                  .then(res => {
+                  this.dialogData = res.data;
+                 });
+                 } else {
+                  //  this.dialogData = { id: 0, is_Enable: 1, is_Delete: 0 };
+             }*/
+        },
         logout() {
             this.gopath("/login");
         },
@@ -138,7 +152,7 @@ export default {
                                     name: newTabName
                                 });
                                 sessionStorage.setItem(
-                                    "zsylocalTabs",
+                                    "zhanglocalTabs",
                                     JSON.stringify(this.tabVals)
                                 );
                             }
@@ -149,7 +163,7 @@ export default {
                             name: newTabName
                         });
                         sessionStorage.setItem(
-                            "zsylocalTabs",
+                            "zhanglocalTabs",
                             JSON.stringify(this.tabVals)
                         );
                     }
