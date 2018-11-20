@@ -3,9 +3,9 @@
     <el-row>
       <el-col :span="20">
         <el-row style="margin-bottom:6px; padding:0 100px;">
-          <el-input v-model="queryData.code" placeholder="用户名" :maxlength="20" size="mini" class="inputwinth150">
+          <!--<el-input v-model="queryData.code" placeholder="用户名" :maxlength="20" size="mini" class="inputwinth150">
             <template slot="prepend">用户名</template>
-          </el-input>
+          </el-input>-->
           <el-input v-model="queryData.name" placeholder="真实姓名" :maxlength="20" size="mini" class="inputwinth150">
             <template slot="prepend">真实姓名</template>
           </el-input>
@@ -27,11 +27,11 @@
     <el-table :data="tableData" :row-class-name="tableRowClassName" size="mini" v-loading="loadingdata" element-loading-text="正在加载中..." border>
       <el-table-column type="index" label="序号" width="50">
       </el-table-column>
-      <el-table-column prop="code" label="用户名">
-      </el-table-column>
+     <!-- <el-table-column prop="code" label="用户名">
+      </el-table-column>-->
       <el-table-column prop="name" label="真实姓名" width="100">
       </el-table-column>
-      <el-table-column prop="phoneNum" label="手机号码" width="100">
+     <!-- <el-table-column prop="phoneNum" label="手机号码" width="100">
       </el-table-column>
       <el-table-column label="性别" width="70">
         <template slot-scope="prop">
@@ -41,7 +41,7 @@
       <el-table-column prop="roleId" label="角色" width="100">
       </el-table-column>
       <el-table-column prop="deptId" label="部门" width="100">
-      </el-table-column>
+      </el-table-column>-->
       <el-table-column prop="sortNum" label="排序" sortable width="70">
       </el-table-column>
       <el-table-column label="状态" width="70">
