@@ -1,8 +1,8 @@
 {
-  "name": "fore-end",
+  "name": "qian",
   "version": "1.0.0",
-  "description": "fore-end project",
-  "author": "zouyou",
+  "description": "qian project",
+  "author": "A",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

@@ -138,7 +138,7 @@ export default {
                                     name: newTabName
                                 });
                                 sessionStorage.setItem(
-                                    "zsylocalTabs",
+                                    "zhanglocalTabs",
                                     JSON.stringify(this.tabVals)
                                 );
                             }
@@ -149,7 +149,7 @@ export default {
                             name: newTabName
                         });
                         sessionStorage.setItem(
-                            "zsylocalTabs",
+                            "zhanglocalTabs",
                             JSON.stringify(this.tabVals)
                         );
                     }

@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="20">
         <el-row style="margin-bottom:6px; padding:0 100px;">
-          <el-input v-model="queryData.routePath" placeholder="路由" :maxlength="20" size="mini" class="inputwinth150">
+        <!--  <el-input v-model="queryData.routePath" placeholder="路由" :maxlength="20" size="mini" class="inputwinth150">
             <template slot="prepend">路由</template>
           </el-input>
           <el-input v-model="queryData.code" placeholder="编码" :maxlength="20" size="mini" class="inputwinth150">
@@ -14,7 +14,7 @@
           </el-input>
           <el-radio v-model="queryData.is_Enable" :label="1">启用</el-radio>
           <el-radio v-model="queryData.is_Enable" :label="0">弃用</el-radio>
-        </el-row>
+        </el-row>-->
         <el-row>
           <el-button size="mini" icon="el-icon-plus" @click="openDialog('新增',0)">新增</el-button>
           <el-button size="mini" icon="fa fa-sign-in"> 导入</el-button>
