@@ -28,7 +28,7 @@ export default {
             moduleName: "userInfo",
             loginloading: false,
             logindesc: "",
-            logintitle: "后台管理系统",
+            logintitle: "管理系统",
             ruleForm: {
                 username: "",
                 password: ""
@@ -40,8 +40,8 @@ export default {
         };
     },
     created: function() {
-        sessionStorage.removeItem("zsylocalInfo");
-        sessionStorage.removeItem("zsylocalTabs");
+        sessionStorage.removeItem("zhanglocalInfo");
+        sessionStorage.removeItem("zhanglocalTabs");
         console.clear();
     },
     methods: {
@@ -60,7 +60,7 @@ export default {
                     self.$ajax.get(url).then(
                         data => {
                             sessionStorage.setItem(
-                                "zsylocalInfo",
+                                "zhanglocalInfo",
                                 JSON.stringify(data)
                             );
                             self.loginloading = false;

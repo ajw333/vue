@@ -2,7 +2,7 @@
     <el-container>
         <el-header>
             <div v-if="!isCollapse" class="headleft" :style="'width:'+(!isCollapse?(asideWidthMax-20):asideWidthMin)+'px'">
-                <span>后台管理系统</span>
+                <span>管理系统</span>
             </div>
             <div class="headleft" @click.prevent="collapse">
                 <i class="fa fa-bars" style="cursor: pointer;"></i>
@@ -82,7 +82,7 @@ export default {
         };
     },
     created: function() {
-        let userallInfo = JSON.parse(sessionStorage.getItem("zsylocalInfo"));
+        let userallInfo = JSON.parse(sessionStorage.getItem("zhanglocalInfo"));
         if (userallInfo) {
             this.userInfoDto = userallInfo.data.userInfoDto;
             this.roleInfoDto = userallInfo.data.roleInfoDto;
@@ -91,7 +91,7 @@ export default {
         } else {
             this.gopath("/login");
         }
-        var tabList = JSON.parse(sessionStorage.getItem("zsylocalTabs"));
+        var tabList = JSON.parse(sessionStorage.getItem("zhanglocalTabs"));
         if (tabList) {
             this.tabVals = tabList;
         } else {
